@@ -1,0 +1,18 @@
+<div>
+  <h2>Sub Header</h2>
+  <input 
+    type="text" 
+    class="form-control" 
+    placeholder="Title..."
+    [(ngModel)] = 'title'
+    #titleInput
+  >
+  <input 
+    type="text" 
+    class="form-control" 
+    placeholder="Text..."
+    [(ngModel)] = 'text'
+  >
+  <button class="btn" (click) = 'addPost()'>Добавить пост</button>
+  <button class="btn" (click) = 'focusTitle()'>Go to title</button>
+</div>
