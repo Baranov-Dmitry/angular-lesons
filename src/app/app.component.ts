@@ -1,45 +1,41 @@
 import { Component, OnInit } from '@angular/core';
 
-export interface Post {
-  title: string
-  text: string
-  id?: number
-}
-
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
-export class AppComponent implements OnInit {
+export class AppComponent {
 
-  title = 'angular-basic';
-  date : Date = new Date()
-  
-  posts: Post[] = [
-    {title:'Angulat components', text:'discription of components', id: 1},
-    {title:'Angulat title', text:'discription of title', id: 2}
-  ]
 
-  ngOnInit(): void {
-    setTimeout(() => {
-      console.log('setTimeout')
-      this.posts = [
-        {title: 'changed!', text: 'Changed', id: 33}
-      ]
-    }, 5000)
-  }
-
-  updatePost(post: Post) {
-    this.posts.unshift(post)
-  }
-
-  removePost(id) {
-    console.log('remove post', id)
-    this.posts = this.posts.filter(p => p.id !== id)
-    console.log(this.posts)
-  }
 }
+
+// title = 'angular-basic';
+//   date : Date = new Date()
+  
+//   posts: Post[] = [
+//     {title:'Angulat components', text:'discription of components', id: 1},
+//     {title:'Angulat title', text:'discription of title', id: 2}
+//   ]
+
+//   ngOnInit(): void {
+//     setTimeout(() => {
+//       console.log('setTimeout')
+//       this.posts = [
+//         {title: 'changed!', text: 'Changed', id: 33}
+//       ]
+//     }, 5000)
+//   }
+
+//   updatePost(post: Post) {
+//     this.posts.unshift(post)
+//   }
+
+//   removePost(id) {
+//     console.log('remove post', id)
+//     this.posts = this.posts.filter(p => p.id !== id)
+//     console.log(this.posts)
+//   }
 
 // arr = [0,1,1,2,3,5,8,13];
   
