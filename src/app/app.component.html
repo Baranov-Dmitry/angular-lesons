@@ -1,120 +1,17 @@
 <div class="container">
-  <h1>Angular Directive</h1>
-  <p appStyle="red" [dStyle]="{border: '1px solid red', borderRadius: '5px', fontWeight: 'bold' }">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nemo, eligendi!</p>
-  <p appStyle="blue" [dStyle]="{border: '1px solid blue', borderRadius: '10px', fontWeight: 'normal' }">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nemo, eligendi!</p>
+  <h1>Angular Pipes</h1>
+
+  <p>
+    {{ e | number:'1.1-5' }}
+  </p>
+
+  <p>
+    {{ e | number:'3.1-2' }}
+  </p>
+
+  <p>
+    {{ e | number:'1.0-0' }}
+  </p>
 </div>
 
-<button class="btn" (click)="isVisiable = !isVisiable">Toggle</button>
 
-<div class="wrap" *appIfnot="isVisiable">
-  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab sapiente iste voluptatibus dolores architecto vitae tenetur adipisci ex quae provident.</p>
-</div>
-
-<!-- <ng-template [ngIf]="isVisiable">
-  <div class="wrap">
-    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab sapiente iste voluptatibus dolores architecto vitae tenetur adipisci ex quae provident.</p>
-  </div>
-</ng-template> -->
-
-<!-- <div class="container">
-  <h1>Angular components</h1>
-  <app-post-form
-    (onAdd) = 'updatePost($event)'
-  ></app-post-form>
-  <hr>
-
-  <app-post
-    *ngFor = "let p of posts"
-    [post] = "p"
-    (onRemove) = "removePost($event)"
-  >
-    <div #info>
-      <small *ngIf="p.text.length > 10 ; else short">Пост длинный</small>
-      <ng-template #short>
-        <small>Пост короткий</small>
-      </ng-template>
-    </div>
-  </app-post>
-</div> -->
-
-<!-- <ul>
-  <li *ngFor="let post of objs">
-    <p>{{post.title}} <b>{{post.autor}}</b></p>
-    <ul *ngFor="let comment of post.comments">
-      <div>
-        <small>{{comment.name}}</small>
-        <p></p>
-      </div>
-    </ul>
-  </li>
-</ul> -->
-
-<!-- <ul>
-  <li *ngFor="let number of arr; let idx = index">
-    {{idx + 1}} <strong>{{number}}</strong>
-  </li>
-</ul> -->
-
-<!-- <button (click)="toggle = !toggle">Toggle</button>
-<button (click)="toggle = 111">Set 111</button>
-
-
-<div [ngSwitch]="toggle">
-  <p *ngSwitchCase="true" class="red">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Impedit, ullam.</p>
-  <p *ngSwitchCase="false" class="blue">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Voluptatum, eos?</p>
-  <p *ngSwitchDefault>Lorem ipsum</p>
-</div> -->
-
-<!-- <p *ngIf="toggle; else blueP" class="red">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Officia, tempore!</p>
-
-<ng-template #blueP>
-  <p class="blue">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Vitae, rem.</p>
-</ng-template> -->
-
-<!-- <p class="red">Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore omnis repellat sit commodi iusto. Neque facilis unde ducimus. Voluptates natus ullam dolore sit nulla saepe nesciunt, consequuntur numquam quasi impedit?</p>
-
-<p 
-  [class.blue]="!backgroungToggle"
-  [class.red]="backgroungToggle"
-  >Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias, similique.</p> -->
-
-<!-- <p [ngClass]="{
-  red: backgroungToggle,
-  blue: !backgroungToggle
-}">Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias, rerum.</p> -->
-
-<!-- <div [ngStyle]="{
-  width: '200px',
-  height: '200px',
-  borderRadius: '5px',
-  border: '1px solid black',
-  background: backgroungToggle ? 'red' : 'blue'
-}"></div> -->
-
-
-<!-- <input type="text" [(ngModel)]="title">
-
-<p>{{title}}</p> -->
-
-
-<!-- <div>
-  <h1>{{title}}</h1>
-  {{number * 2}}
-  {{arr.toString() + ' Hello bey'}}
-  {{obj.b.c}}
-</div>
-
-<button (click)="onClick()">Click me!</button>
-
-<input 
-  type="text" 
-  (keyup.enter)="onInput($event)" 
-  (blur)="onBlur(myInput.value)"
-  #myInput
->
-<p><strong>{{inputValue}}</strong></p>
-
-<img [srs]="title" alt="">
-<app-post></app-post>
-
-<app-post4></app-post4> -->
