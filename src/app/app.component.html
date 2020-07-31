@@ -1,57 +1,52 @@
 <div class="container">
-  <h1>Angular Services</h1>
-  
-  <div class="card">
-    <h2>App Counter: {{ appCounterService.counter }}</h2>
-    <button class="btn" (click)="appCounterService.increase()">+</button>
-    <button class="btn" (click)="appCounterService.decrease()">-</button>
-  </div>
+  <form class="card">
+    <h1>Angular Forms</h1>
 
-  <div class="card">
-    <h2>App Counter: {{ appLocalCounterService.counter }}</h2>
-    <button class="btn" (click)="appLocalCounterService.increase()">+</button>
-    <button class="btn" (click)="appLocalCounterService.decrease()">-</button>
-  </div>
-  
-  <app-counter></app-counter>
+    <div class="form-control">
+      <label>Email</label>
+      <input type="text" placeholder="Email">
+      <div class="validation"></div>
+    </div>
 
+    <div class="form-control">
+      <label>Пароль</label>
+      <input type="password" placeholder="Пароль">
+      <div class="validation"></div>
+    </div>
+
+    <div class="card">
+      <h2>Адрес</h2>
+
+      <div class="form-control">
+        <label>Страна</label>
+
+        <select>
+          <option value="ru">Россия</option>
+          <option value="ua">Украина</option>
+          <option value="by">Беларусь</option>
+        </select>
+      </div>
+
+      <div class="form-control">
+        <input type="text">
+      </div>
+
+      <button class="btn">Выбрать столицу</button>
+    </div>
+
+    <div class="card">
+      <h2>Ваши навыки</h2>
+      <button class="btn">Добавить умение</button>
+      <div class="form-control">
+        <label></label>
+        <input type="text">
+      </div>
+    </div>
+
+    <button class="btn">Отправить</button>
+
+  </form>
 </div>
 
 
-<!-- <p>
-    {{ float }}
-  </p>
 
-  <p>
-    {{ float | currency }}
-  </p>
-  
-  <p>
-    {{ float | percent }}
-  </p>
-
-  <pre>{{ obj | json }}</pre>
-
-  <p>
-    {{ date | date:'MMMM dd, yyy, HH:mm' }}
-  </p>
-
-  <p>
-    {{ str | uppercase | lowercase | titlecase }}
-  </p>
-
-  <p>
-    {{ str | titlecase | slice:1:-2 }}
-  </p>
-
-  <p>
-    {{ e | number:'1.1-5' }}
-  </p>
-
-  <p>
-    {{ e | number:'3.1-2' }}
-  </p>
-
-  <p>
-    {{ e | number:'1.0-0' }}
-  </p> -->
