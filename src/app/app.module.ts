@@ -3,20 +3,22 @@ import {NgModule} from '@angular/core'
 
 import {AppComponent} from './app.component'
 import {FormsModule} from '@angular/forms'
-import { MultByPipe } from './pipes/muit-by-pipe'
-import { FilterPipe } from './pipes/filter.pipe'
+import { AppCounterServices } from './services/app-counter.services';
+import { CounterComponent } from './counter/counter.component'
 
 @NgModule({
   declarations: [
     AppComponent,
-    MultByPipe,
-    FilterPipe
+    CounterComponent,
+    CounterComponent
   ],
   imports: [
     BrowserModule,
     FormsModule
   ],
-  providers: [],
+  providers: [
+    AppCounterServices
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule {

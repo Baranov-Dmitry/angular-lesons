@@ -1,35 +1,18 @@
 import {Component, OnInit} from '@angular/core'
-import { Observable } from 'rxjs'
-
-export interface Post {
-  title: string,
-  text: string
-}
+import { AppCounterServices } from './services/app-counter.services';
+import { AppLocalCounterServices } from './services/app-local-counter.services';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss']
+  styleUrls: ['./app.component.scss'],
+  providers: [AppLocalCounterServices]
 })
-export class AppComponent implements OnInit {
-  
-  p: Promise<string> = new Promise<string>( resolve => {
-    setTimeout(() => {
-      resolve('Promise Resolved')
-    }, 4000)
-  })
+export class AppComponent  {
 
-  date$: Observable<Date> = new Observable(obs => {
-    setInterval(() => {
-      obs.next(new Date())
-    }, 1000)
-  })
+  constructor(public appCounterService: AppCounterServices, 
+    public appLocalCounterService: AppLocalCounterServices ) {
 
-  date: Date
-
-  ngOnInit(): void {
-    this.date$.subscribe( date => {
-      this.date = date
-    })
   }
+
 }
