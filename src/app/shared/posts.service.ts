@@ -1,8 +1,8 @@
 import { Injectable } from "@angular/core";
 import { HttpClient } from '@angular/common/http';
-import { Observable } from 'rxjs';
 import { Post, FbCreateResponce } from './interface';
 import { environment } from 'src/environments/environment';
+import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 
 @Injectable({providedIn: 'root'})
@@ -14,7 +14,7 @@ export class PostsService {
 
   create(post: Post): Observable<Post> {
     return this.http.post(`${environment.fbDBUrl}/posts.json`, post)
-    .pipe(map((response: FbCreateResponce)=>{
+    .pipe(map((response: FbCreateResponce) => {
         return {
           ...post,
           id: response.name,
@@ -22,6 +22,30 @@ export class PostsService {
         }
       })
     )
+  }
+
+  getAll(): Observable<any> {
+    return this.http.get(`${environment.fbDBUrl}/posts.json`)
+      .pipe(
+        (response) => {
+          //в функцию пайп можно передать несколко лямбда функий через запятую
+          return response
+        },
+        map((response) => {
+          return Object.keys(response).map(key => ({
+              autor: response[key].autor,
+              title: response[key].title,
+              text: response[key].text,
+              id: key,
+              date: new Date(response[key].date)
+            })
+          )
+        })
+      )
+  }
+
+  delete(id: string): Observable<any> {
+    return this.http.delete(`${environment.fbDBUrl}/posts/${id}.json`)
   }
 
 }
