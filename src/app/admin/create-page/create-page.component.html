@@ -1,0 +1,51 @@
+<form class="card" [formGroup]="form" (ngSubmit)="submit()">
+  <h1></h1>
+
+  <div 
+    class="form-control"
+    [ngClass]="{invalid: form.get('title').touched && form.get('title').invalid}"
+    >
+    <label for="title">Name of the post:</label>
+    <!-- formControlName take name field of the initializing input form object -->
+    <input id="title" type="text" formControlName="title">
+    <div *ngIf="form.get('title').touched && form.get('title').invalid" class="validation">
+      <!-- form.get('email').errors array of results validation functions  -->
+      <small 
+        *ngIf="form.get('title').errors.required ">
+        Inter name of the post
+      </small>
+    </div>
+
+  </div>
+
+  <div class="form-control">
+    <label for="text">Content of the post:</label>
+    <quill-editor
+      formControlName="text"
+    ></quill-editor>
+  </div>
+
+  <div 
+    class="form-control"
+    [ngClass]="{invalid: form.get('autor').touched && form.get('autor').invalid}"
+    >
+    <label for="autor">Autor of the post:</label>
+    <!-- formControlName take name field of the initializing input form object -->
+    <input id="autor" type="text" formControlName="autor">
+    <div *ngIf="form.get('autor').touched && form.get('autor').invalid" class="validation">
+      <!-- form.get('email').errors array of results validation functions  -->
+      <small 
+        *ngIf="form.get('autor').errors.required ">
+        Inter name on the post
+      </small>
+    </div>
+
+  </div>
+
+  <button 
+    type="submit"  
+    class="btn btn-primary"
+    [disabled]="form.invalid"
+  >Create post</button>
+
+</form>
